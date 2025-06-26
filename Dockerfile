@@ -6,10 +6,10 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 
-#ADD . /usr/src/app/
+ADD . /usr/src/app/
 RUN npm install
 
-COPY ..
+COPY . .
 
 EXPOSE 9000
 
