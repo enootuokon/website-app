@@ -1,15 +1,4 @@
-FROM node:18
-
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app/
-
-COPY package*.json ./
-
-ADD . /usr/src/app/
-RUN npm install
-
-COPY . .
+FROM httpd:2.4
+COPY index.html /usr/local/apache2/htdocs/
 
 EXPOSE 9000
-
-CMD [ "npm", "run", "dev" ]
